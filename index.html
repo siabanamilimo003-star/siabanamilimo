@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milimo Siabana | Prospective Engineer, Academic Excellence & Leadership</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --success: #27ae60;
+            --gold: #f1c40f;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: all 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: all 0.3s;
+        }
+        
+        header.scrolled nav {
+            padding: 10px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0 V100 Q500,50 1000,100 V0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin: 0 auto 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Professional Summary */
+        .summary {
+            background-color: white;
+            position: relative;
+        }
+        
+        .summary-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Biography Section */
+        .biography {
+            background-color: #f5f7fa;
+        }
+        
+        .biography-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .biography-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .biography-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .biography-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .biography-text h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .biography-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Education Section */
+        .education {
+            background-color: white;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .education-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .education-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .education-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .education-card:hover .education-image img {
+            transform: scale(1.1);
+        }
+        
+        .education-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .education-card:hover .education-overlay {
+            opacity: 1;
+        }
+        
+        .education-overlay .btn {
+            background: rgba(255,255,255,0.9);
+            color: var(--primary);
+        }
+        
+        .education-info {
+            padding: 25px;
+        }
+        
+        .education-date {
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .education-level {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Education Details Modal */
+        .education-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .education-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 12px;
+            overflow: hidden;
+            transform: translateY(50px);
+            transition: transform 0.5s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .education-modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 25px;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .education-achievements ul {
+            list-style-type: none;
+        }
+        
+        .education-achievements li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .education-achievements li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: #f5f7fa;
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .experience-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .experience-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary);
+        }
+        
+        .experience-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .experience-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: #f5f7fa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .skill-items {
+            list-style-type: none;
+        }
+        
+        .skill-items li {
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+        
+        /* Achievements Section */
+        .achievements {
+            background-color: #f5f7fa;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .achievement-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--secondary);
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .achievement-year {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Updates Section */
+        .updates {
+            background-color: white;
+        }
+        
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .update-card {
+            background-color: #f5f7fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .update-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .update-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .update-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .update-card:hover .update-image img {
+            transform: scale(1.1);
+        }
+        
+        .update-content {
+            padding: 25px;
+        }
+        
+        .update-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Scholarships Section */
+        .scholarships {
+            background-color: #f5f7fa;
+        }
+        
+        .scholarships-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .scholarship-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .scholarship-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .scholarship-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .scholarship-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .scholarship-card:hover .scholarship-image img {
+            transform: scale(1.1);
+        }
+        
+        .scholarship-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .scholarship-card:hover .scholarship-overlay {
+            opacity: 1;
+        }
+        
+        .scholarship-content {
+            padding: 25px;
+        }
+        
+        .scholarship-deadline {
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .scholarship-eligibility {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact h2:after {
+            background-color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .biography-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .biography-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">Milimo Siabana</div>
+                <div class="menu-toggle">☰</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#summary">About Me</a></li>
+                    <li><a href="#biography">Biography</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#updates">Updates</a></li>
+                    <li><a href="#scholarships">Scholarships</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                           
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="profile-img">
+                <img src="profile-img.jpg" alt="Milimo Siabana">
+            </div>
+            <h1>Milimo Siabana</h1>
+            <p>A Level Graduate 25' | High-achieving Scholar | STEM Enthusiast | Data Analytics Certified</p>
+            <div class="hero-badges">
+                <div class="badge"><i class="fas fa-award"></i> Trident College Solewezi Dux Scholar 25'</div>
+                <div class="badge"><i class="fas fa-trophy"></i> 2023 Senior National Math Olympiad Winner</div>
+                <div class="badge"><i class="fas fa-certificate"></i> SESTUZ Scholarship Recipient</div>
+                <div class="badge"><i class="fas fa-certificate"></i> FQML Scholarship Recipient</div>
+                <div class="badge"><i class="fas fa-chart-line"></i> Data Analytics Certified</div>
+            </div>
+            <a href="#contact" class="btn" style="margin-top: 30px;">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section id="summary" class="summary">
+        <div class="container">
+            <h2>Professional Summary</h2>
+            <div class="summary-content">
+                <p>A high-achieving and adaptable student with a proven ability to apply advanced analytical skills, strategic thinking, and clear communication to diverse challenges. Combines award-winning problem-solving prowess with hands-on technical proficiency and a talent for mentoring and collaboration.</p>
+                <p>A reliable and results-oriented individual, certified in Data Analytics and Business Process Management, committed to delivering excellence in any environment.</p>
+                <div style="margin-top: 30px;">
+                    <a href="#education" class="btn">View My Education</a>
+                    <a href="#experience" class="btn btn-outline" style="margin-left: 15px;">See My Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="biography" class="biography">
+        <div class="container">
+            <h2>My Biography</h2>
+            <p class="section-intro">Learn more about my journey, passions, and aspirations in the field of Finance and business, engineering, and STEM education.</p>
+            <div class="biography-content">
+                <div class="biography-image">
+                    <img src="MS_00.jpg" alt="Milimo Studying">
+                </div>
+                <div class="biography-text">
+                    <h3>Early Life</h3>
+                    <p> My name is Milimo Siabana. I was born in 2003 July 11 in Maakula Village of Sinazongwe District of Southern Province.</p>
+                    <p> During my early years, I enjoyed fishing in Kariba and catching birds. My first 15 years were preoccupied with catching breams with my friends, farming and looking after cattle.
+                        I remember one specific moment when I went out, with my brothers, to play with a bird in Lake Kariba and crocodiles nearly attacked us. 
+                    </p>
+                    <p> </p>
+            
+            </div>
+        </div>
+                  <h3>My Journey in STEM</h3>
+                    <p>From an early age, I've been fascinated by how things work, particularly in the fields of mathematics and science. This curiosity led me to pursue a path in STEM education, where I've consistently excelled and earned numerous accolades.</p>
+                    <p>My passion for mining engineering stems from a desire to contribute to sustainable resource extraction and management in Zambia and beyond. I believe that with proper innovation and ethical practices, the mining industry can be a force for positive development.</p>
+                    <p>Beyond academics, I'm deeply committed to mentoring younger students and promoting STEM education in underserved communities. I believe that education is the most powerful tool for personal and societal transformation.</p>
+                    <p>My ultimate goal is to become a leading mining engineer who contributes to technological advancements in the industry while mentoring the next generation of Zambian scientists and engineers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education & Qualifications</h2>
+            <p class="section-intro">Below is my education history starting with the most recent one. I list all my achievements, and the activities I was involved in while attending these institutions. 
+                                     Click on each education card to view detailed achievements and qualifications</p>
+            <div class="education-grid">
+                <!-- Trident College -->
+                <div class="education-card" data-education="trident">
+                    <div class="education-image">
+                        <img src="trident-college.jpg" alt="Trident College">
+                        <div class="education-overlay">
+                            <span class="btn">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2024 - 2025</div>
+                        <h3>Trident College Solwezi</h3>
+                        <p class="education-level">Cambridge International A Levels</p>
+                        <p>Dux Scholar • SERVICE AWARD with HONOURS • 4 A Levels, 1 AS Level • Head of Kansanshi Junior Boys Boarding house</p>
+                    </div>
+                </div>
+
+                <!-- Hillcrest -->
+                <div class="education-card" data-education="hillcrest">
+                    <div class="education-image">
+                        <img src="Hillcrest.jpg" alt="Hillcrest Technical School">
+                        <div class="education-overlay">
+                            <span class="btn">Click to See more</span>
+                        </div>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2021 - 2023</div>
+                        <h3>Hillcrest Boys National STEM Secondary School</h3>
+                        <p class="education-level">Senior Secondary Education, Grade 10 - 12.</p>
+                        <p>HEAD BOY • 8 Distinctions • National Math Olympiad Winner</p>
+                    </div>
+                </div>
+
+                <!-- Sinanjola Basic -->
+                <div class="education-card" data-education="sinanjola-basic">
+                    <div class="education-image">
+                        <img src="Sinanjola.jpg" alt="Sinanjola Basic School">
+                        <div class="education-overlay">
+                            <span class="btn">View Details</span>
+                        </div>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2019 - 2020</div>
+                        <h3>Sinanjola Basic School</h3>
+                        <p class="education-level">Junior Secondary School</p>
+                        <p>Junior Secondary Certificate • Scored 534 • Grade 8 - 9</p>
+                    </div>
+                </div>
+
+                <!-- Sinanjola Primary -->
+                <div class="education-card" data-education="sinanjola-primary">
+                    <div class="education-image">
+                        <img src="Sinanjola.jpg" alt="Sinanjola Basic School">
+                        <div class="education-overlay">
+                            <span class="btn">Click to see more</span>
+                        </div>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2012 - 2018</div>
+                        <h3>Sinanjola Basic School</h3>
+                        <p class="education-level">Primary Education</p>
+                        <p>Grade 7 Certificate • 831 Marks • Grade 1 to 7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Details Modals -->
+    <!-- Trident College Modal -->
+    <div class="education-modal" id="trident-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Trident College Solwezi</h3>
+                <p>Cambridge International A Levels (2024 - 2025)</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="education-achievements">
+                    <h4>Achievements & Qualifications</h4>
+                    <ul>
+                        <li><strong>Subjects:</strong> Further Math, Math, Physics, Chemistry, Biology</li>
+                        <li><strong>A Level Results:</strong> Mathematics (<strong>A</strong>), Further Mathematics (<STRONG>pending</STRONG>), Physics (<STRONG>pending</STRONG>), Chemistry (<STRONG>pending</STRONG>)</li>
+                        <li><strong>AS Level Results:</strong> Further Mathematics (<strong>a</strong>), Mathematics (<strong>a</strong>), Physics (<strong>a</strong>), Chemistry(<strong>a</strong>), Biology (<strong>a</strong>) </li>
+                        <li><strong>Awards:</strong> <li>Dux Scholar 25'</li> <li>SERVICE AWARD with HONOURS</li> <li>Highest score in Key stage 5 UCT Online Math Olympiad</li> <li>Other Cycle Award Certifications</li>  </li>
+                        <li><strong>Certifications & Endorsements:</strong> Introduction to BUSINESS (Saylor Academy), Data Analytics with Excel (Great Learning Academy),  Communication, Health and Safety management, Business Process Management Basics</li>
+                        <li><strong>Activities & Socities:</strong> <Li> STEM CLUB President</Li> <li> Cheshire Homes</li> <li>Academic Mentor</li> <li> Head of Kansanshi, a Junior Boys Boarding House</li> </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hillcrest Modal -->
+    <div class="education-modal" id="hillcrest-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Hillcrest Boys National STEM Secondary School</h3>
+                <p>Senior Secondary Education (2021 - 2023)</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="education-achievements">
+                    <h4>Achievements & Qualifications</h4>
+                    <ul>
+                        <li><strong>School Certificate:</strong> 1st distinctions in all 8 subjects: Math, English, Chemistry, Physics, Biology, Additional Math, Geography, Civic Education</li>
+                        <li><strong>Leadership:</strong> <li>HEAD BOY 2023</li> <LI>JETS CLUB Olympiads and Quz Coordinator 2021 - 2023</LI> <li>Hillcrest PCM Librarian</li> <li>Prophecy Band Coordinator</li> <li>AYM Leader</li>
+
+                        </li>
+                        <li><strong>Achievements:</strong> <LI>Overall Best Grade 12 Pupil</LI> <LI>Best G12 student in Physics, Chemistry and Geography</LI> <li>Overall best grade 10 and 11 student</li>  </li>
+                        <li><strong>National Recognition:</strong> <li>2023 Senior National Mathematics Olympiads Champion</li> <li>Participated in the Inaugural STEM BOOT CAMP</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sinanjola Basic Modal -->
+    <div class="education-modal" id="sinanjola-basic-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sinanjola Basic School</h3>
+                <p>Junior Secondary School (2019 - 2020)</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="education-achievements">
+                    <h4>Achievements & Qualifications</h4>
+                    <ul>
+                        <li>Junior Secondary Leaving School Certificate</li>
+                        <li>Strong foundation in core subjects leading to STEM specialization</li>
+                        <li>Development of critical thinking and problem-solving skills</li>
+                        <li>Participation in science fairs and mathematics competitions and JETS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sinanjola Primary Modal -->
+    <div class="education-modal" id="sinanjola-primary-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sinanjola Basic School</h3>
+                <p>Primary Education (2012 - 2018)</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="education-achievements">
+                    <h4>Achievements & Qualifications</h4>
+                    <ul>
+                        <li>Grade 7 ECZ Certificate</li>
+                        <li>Scored 821 marks - demonstrating early academic excellence</li>
+                        <li>Foundation for mathematical and scientific aptitude</li>
+                        <li>Active participation in school clubs and extracurricular activities</li>
+                         <li><strong>Primary Mathematics National Olympiads Certificate of participation</strong></li>
+                         <li><strong>1st Prize in SOUTHERN 'B' Regional Primary Mathematics Olympiads</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Work Experience & Leadership</h2>
+            <p class="section-intro">My professional journey in tutoring, leadership, and practical engineering experience</p>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> IGCSE & A Level Tutor & Mentor</h3>
+                    <div class="experience-date">May to October 2025</div>
+                    <p>Provided tutoring in IGCSE Mathematics and served as Further Mathematics and Physics A Level Mentor at Trident College Solwezi.</p>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-atom"></i> President of STEM Club</h3>
+                    <div class="experience-date">January to November 2025</div>
+                    <p>Led the STEM Club at Trident College, preparing students for Olympiads in Mathematics, Physics, Chemistry & Biology, and coaching students in research methodology.</p>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-gavel"></i> National JETS Fair Adjudicator</h3>
+                   <div class="experience-date">11th – 15th August 2025</div>
+                    <p>Senior Mathematics Innovations Adjudicator at National Science Centre, evaluating student mathematical innovations and helping refine ideas.</p>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-hard-hat"></i> Mining Engineering Work Placement</h3>
+                    <div class="experience-date">19th – 29th November 2024</div>
+                    <p>Worked with mining engineers at KANSANSHI Mining Plc on drill patterns, blast timing designs, and acquired skills in Geovia Surpac, SHOT Plus and Dezwik software.</p>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-hands-helping"></i> Community Service Tutor</h3>
+                    <div class="experience-date">2024 to 2025</div>
+                    <p>Tutored children with disabilities in Mathematics at Cheshire Homes Solwezi, helping them improve their exam performance.</p>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-user-graduate"></i> Head Boy</h3>
+                    <div class="experience-date">October 2022 to November 2023</div>
+                    <p>Served as Head Boy at Hillcrest Boys National STEM Secondary School, addressing conflicts, organizing events, and developing leadership skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills & Competencies</h2>
+            <p class="section-intro">A comprehensive overview of my technical, leadership, and personal skills</p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> Languages & Communication</h3>
+                    <ul class="skill-items">
+                        <li>Fluent in English and Tonga</li>
+                        <li>Average proficiency in Nyanja</li>
+                        <li>Excellent writing and oral communication skills</li>
+                        <li>Certificate in Communication</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Leadership & Management</h3>
+                    <ul class="skill-items">
+                        <li>Leadership and teamwork</li>
+                        <li>Time management and organizational skills</li>
+                        <li>Facilitation and coordination</li>
+                        <li>Public speaking and conflict resolution</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                    <ul class="skill-items">
+                        <li>ICT proficient (MS Suite, Google Suite)</li>
+                        <li>Data Analytics with Excel (Certified)</li>
+                        <li>Des Wik, Surpac & SHOT Plus software basics</li>
+                        <li>Research and analytical skills</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-star"></i> Personal Attributes</h3>
+                    <ul class="skill-items">
+                        <li>Creative and collaborative</li>
+                        <li>Reliable, honest and trustworthy</li>
+                        <li>Assertive and hard-working</li>
+                        <li>Outstanding interpersonal skills</li>
+                        <li>Good communicator and go-getter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2>Achievements & Awards</h2>
+            <p class="section-intro">Recognition of my academic excellence and contributions to STEM education</p>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-year">2025</div>
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Dux Scholar Award</h3>
+                    <p>Received the Dux Scholar Award and SERVICE AWARD with HONOURS at Trident College</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-year">2024</div>
+                    <div class="achievement-icon">🎖️</div>
+                    <h3>Full Colours in Academics</h3>
+                    <p>Awarded with Full Colours in Academics at Trident College and highest mark in UCT Mathematics Olympiads</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-year">2023</div>
+                    <div class="achievement-icon">🥇</div>
+                    <h3>National Math Olympiad Winner</h3>
+                    <p>Won 1st Prize in National Senior Mathematics Olympiads and awarded Overall Best Grade 12 Pupil at Hillcrest</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-year">2021-2023</div>
+                    <div class="achievement-icon">⭐</div>
+                    <h3>Academic Excellence</h3>
+                    <p>Awarded as overall best grade 10,11 and 12 student in consecutive years at Hillcrest</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-year">2018</div>
+                    <div class="achievement-icon">🔬</div>
+                    <h3>JETS Fair Recognition</h3>
+                    <p>Certificate of participation at National JETS Fair and 1st prize in Primary Mathematics Olympiads</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-year">STEM</div>
+                    <div class="achievement-icon">💡</div>
+                    <h3>STEM Boot Camp</h3>
+                    <p>Contributed to development of mathematics innovations during 2023 Inaugural STEM Boot Camp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section id="updates" class="updates">
+        <div class="container">
+            <h2>Current Projects & Updates</h2>
+            <p class="section-intro">What I'm currently working on and recent developments in my academic journey</p>
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGF0YSUyMGFuYWx5dGljc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Data Analytics">
+                    </div>
+                    <div class="update-content">
+                        <div class="update-date">Ongoing</div>
+                        <h3>Advanced Data Analytics with Excel</h3>
+                        <p>Working on a comprehensive data analysis project using Excel and exploring Python for more advanced analytics applications.</p>
+                    </div>
+                </div>
+                <div class="update-card">
+                    <div class="update-image">
+                        <img src="Tutions.png" alt="Tutoring">
+                    </div>
+                    <div class="update-content">
+                        <div class="update-date">Current</div>
+                        <h3>Tutoring program</h3>
+                        <p>Developing a structured tutoring program for students focusing on mathematics and science subjects.</p>
+                        <p>Offereing Maths, Physics and Chemistry Tuitions to High school students both Zambian Curriculum and Cambridge IGCSE & A Levels Curricula</p>
+                    </div>
+                </div>
+                <div class="update-card">
+                    <div class="update-image">
+                        <img src="Scholarships.jpg" alt="Scholarship Guide">
+                    </div>
+                    <div class="update-content">
+                        <div class="update-date">Current</div>
+                       <h3>Scholarship & bursaries guide</h3>
+                       <p>Developing a website with comprehensive scholarship opportunities and bursaries for Zambian students pursuing higher education locally and abroad.</p>
+                    </div>
+                </div>
+                <div class="update-card">
+                    <div class="update-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWluaW5nJTIwZW5naW5lZXJpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Mining Engineering">
+                    </div>
+                    <div class="update-content">
+                        <div class="update-date">Ongoing</div>
+                        <h3>University Applications</h3>
+                        <p>Preparing applications for engineering scholarships/bursaries at top universities abroad and in Zambia for the 2025/2026 undergraduate intake.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section id="scholarships" class="scholarships">
+        <div class="container">
+            <h2>Scholarships for Zambian Students</h2>
+            <p class="section-intro">A curated list of scholarship opportunities available for Zambian students pursuing higher education</p>
+            <div class="scholarships-grid">
+                <!-- HELSB -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN0dWRlbnQlMjBzY2hvbGFyc2hpcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="HELSB Scholarship">
+                        <div class="scholarship-overlay">
+                            <a href="https://www.helsb.gov.zm/" target="_blank" class="btn">Apply Now</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-card">
+    
+    <div class="scholarship-content">
+        <div class="scholarship-deadline">Application Period: Varies by partner University. See timelines below</div>
+        <h3>Higher Education Loans & Scholarships Board (HELSB)</h3>
+        <p>Government-funded loans and scholarships for Zambian students pursuing higher education at recognized public and private institutions.</p>
+        
+        <div class="scholarship-details">
+            <div class="detail-section">
+                <h4><i class="fas fa-user-check"></i> Eligibility Criteria</h4>
+                <ul>
+                    <li>Zambian citizen with a valid NRC</li>
+                    <li>Admitted to an accredited higher education institution</li>
+                    <li>Good academic record (Minimum 5 O-level credits)</li>
+                    <li>Not benefiting from any other scholarship</li>
+                    <li>Meets specific program requirements</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h4><i class="fas fa-file-alt"></i> Application Requirements</h4>
+                <ul>
+                    <li>Completed HELSB application form</li>
+                    <li>Certified copy Grade 12 Certificate or statement of results</li>
+                    <li>Birth Certificate (Original & Photocopy)</li>
+                    <li>Certified copy of a valid National Registration Card (NRC)</li>
+                    <li>Admission letter from respective institution</li>
+                    <li>Fee structure from institution</li>
+                    <li>Recent passport-size photographs</li>
+                    <li>Recommendation letters (School/Chief/Headman)</li>
+                    <li>Parent/Guardian income statement</li>
+                </ul>
+            </div>
+            
+            <div class="detail-section">
+                <h4><i class="fas fa-calendar-alt"></i> Accredited Institution Timelines</h4>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <strong>The University of Zambia</strong>
+                        <span>August - October,</span>
+                        <span>Expected List release date: Novemeber</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Copperbelt University</strong>
+                        <span>May - July</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>MUKUBA</strong>
+                        <span>To be updated</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>MULUNGUSHI University</strong>
+                        <span>To be updated</span>
+                    </div>
+                </div>
+                <p class="timeline-note">*Dates are approximate - check HELSB website for exact deadlines</p>
+            </div>
+            
+            <div class="detail-section">
+                <h4><i class="fas fa-info-circle"></i> Additional Information</h4>
+                <ul>
+                    <li>Loans are repayable after completion of studies</li>
+                    <li>Scholarships available for specific programs</li>
+                    <li>Bursaries for students from vulnerable backgrounds</li>
+                    <li>Apply online through HELSB portal</li>
+                    <li>Regularly check for updates on their website</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Mastercard Foundation -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN0dWRlbnQlMjBzY2hvbGFyc2hpcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Mastercard Foundation Scholarship">
+                        <div class="scholarship-overlay">
+                            <a href="https://mastercardfdn.org/all/scholarships/" target="_blank" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-content">
+                        <div class="scholarship-deadline">Deadline: Varies by partner university</div>
+                        <h3>Mastercard Foundation Scholars Program</h3>
+                        <p>Comprehensive scholarships for African students to study at partner universities worldwide, including in South Africa.</p>
+                        <div class="scholarship-eligibility">
+                            <strong>Eligibility:</strong> Academically talented young Africans with leadership potential
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University of Zambia -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="University of Zambia">
+                        <div class="scholarship-overlay">
+                            <a href="https://www.unza.zm/" target="_blank" class="btn">Visit UNZA</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-content">
+                        <div class="scholarship-deadline">Application Period: Jan-Mar 2025</div>
+                        <h3>University of Zambia (UNZA)</h3>
+                        <p>Zambia's premier university offering various programs with government and private scholarship opportunities.</p>
+                        <div class="scholarship-eligibility">
+                            <strong>Eligibility:</strong> Meet entry requirements for chosen program
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copperbelt University -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Copperbelt University">
+                        <div class="scholarship-overlay">
+                            <a href="https://www.cbu.ac.zm/" target="_blank" class="btn">Visit CBU</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-content">
+                        <div class="scholarship-deadline">Application Period: Feb-Apr 2025</div>
+                        <h3>Copperbelt University (CBU)</h3>
+                        <p>Leading university in engineering and technology fields with various scholarship opportunities for Zambian students.</p>
+                        <div class="scholarship-eligibility">
+                            <strong>Eligibility:</strong> Meet entry requirements, especially in sciences for engineering programs
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Scholarship Opportunities -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHN0dWRlbnQlMjBzY2hvbGFyc2hpcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="More Scholarships">
+                        <div class="scholarship-overlay">
+                            <a href="#contact" class="btn">Contact for Info</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-content">
+                        <div class="scholarship-deadline">Various Deadlines</div>
+                        <h3>Additional Opportunities</h3>
+                        <p>Various private and international scholarships available for Zambian students in specific fields like mining engineering.</p>
+                        <div class="scholarship-eligibility">
+                            <strong>Eligibility:</strong> Varies by scholarship provider
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mining Company Scholarships -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWluaW5nJTIwaW5kdXN0cnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Mining Scholarships">
+                        <div class="scholarship-overlay">
+                            <a href="#contact" class="btn">Find out more</a>
+                        </div>
+                    </div>
+                    <div class="scholarship-content">
+                        <div class="scholarship-deadline">Varies by company and NGOs/Associations</div>
+                        <h3>Other Buraries</h3>
+                        <p>Several companies in South Africa & Zambia offer bursaries and scholarships for students pursuing diffferent fields-related degrees.</p>
+                        <div class="scholarship-eligibility">
+                            <strong>Eligibility:</strong> Interest or field aligned with the respective industries, strong academic record
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing work experience opportunities, Volunteering, collaborations, Private Tutoring, or mentoring in STEM fields.</p>
+            <p>     My contact details are below; you may also contact me through my active social media platforms: LinkedIn, Instagram and/or Facebook.</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>Email:</span>
+                        <a href="mailto:siabanamilimo003@gmail.com">siabanamilimo003@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <span>Phone/WhatsApp:</span>
+                        <a href="tel:+260976452281">+260 976 452 281</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Location:</span>
+                        <span>Lusaka, Zambia</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/milimo-siabana-6b380b300" target="_blank" title="Connect on LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://web.facebook.com/milimo.siabana" target="_blank" title="Connect on Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/milimo.munyama/" target="_blank" title="Connect on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Milimo Siabana</div>
+                <p class="footer-quote">"Let us by our deeds be judged" - Hillcrest Motto (Former school)</p>
+                <p>Dux Scholar 25' | STEM Enthusisat | Maths & ScienceTutor, in - person or online | Knowledge is Power</p>
+                <p>&copy; 2025 Milimo Siabana. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Add active class to nav links when scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Education cards functionality
+        document.querySelectorAll('.education-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const educationType = this.getAttribute('data-education');
+                const modal = document.getElementById(`${educationType}-modal`);
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close modal functionality
+        document.querySelectorAll('.modal-close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                this.closest('.education-modal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close modal when clicking outside
+        document.querySelectorAll('.education-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.education-modal').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+    <!-- Add this temporary test section before closing body tag -->
+<div style="position: fixed; bottom: 10px; right: 10px; background: #27ae60; color: white; padding: 10px; border-radius: 5px; z-index: 9999;">
+    ✅ Consistency!
+</div>
+</body>
+</html>
