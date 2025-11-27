@@ -1567,9 +1567,6 @@
                         <i class="fas fa-mobile-alt"></i><br>Social Media Advertising
                     </button>
                     <button class="section-btn">
-                        <i class="fas fa-search"></i><br>SEO & Content Marketing
-                    </button>
-                    <button class="section-btn">
                         <i class="fas fa-print"></i><br>Print & Traditional Media
                     </button>
                 </div>
@@ -1603,8 +1600,7 @@
                                 <option value="">Select service type</option>
                                 <option value="digital-marketing">Digital Marketing</option>
                                 <option value="social-media">Social Media Advertising</option>
-                                <option value="seo">SEO & Content Marketing</option>
-                                <option value="traditional">Print & Traditional Media</option>
+                               <option value="Building website</option>
                                 <option value="comprehensive">Comprehensive Campaign</option>
                                 <option value="other">Other</option>
                             </select>
@@ -1612,7 +1608,7 @@
                         
                         <div class="form-group">
                             <label for="budget">Advertising Budget (USD)</label>
-                            <input type="number" id="budget" name="budget" min="100">
+                            <input type="number" id="budget" name="budget" min="50">
                         </div>
                         
                         <div class="form-group">
@@ -1662,7 +1658,7 @@
                                 <option value="scholarship">Scholarship Guidance</option>
                                 <option value="university">University Applications</option>
                                 <option value="mentorship">Mentorship Program</option>
-                                <option value="multiple">Multiple Services</option>
+                                <option value="multiple">Multiple Services, specify in body</option>
                             </select>
                         </div>
                         
@@ -1774,7 +1770,7 @@
                     </div>
                     <div class="media-item">
                         <video controls>
-                            <source src="STEM.mp4" type="video/mp4">
+                            <source src="STEM.mp4" type="mp4">
                         </video>
                         <div class="media-caption">STEM Activities</div>
                     </div>
@@ -1934,14 +1930,7 @@
                         <p><strong>Programs:</strong> Business, Education, Agriculture</p>
                         <a href="https://www.mu.ac.zm/" target="_blank" class="btn">Visit Website</a>
                     </div>
-                    
-                    <div class="university-card">
-                        <h3>Zambia Catholic University</h3>
-                        <p><strong>Location:</strong> Kalulushi</p>
-                        <p><strong>Programs:</strong> Humanities, Social Sciences</p>
-                        <a href="https://www.zacu.edu.zm/" target="_blank" class="btn">Visit Website</a>
-                    </div>
-                    
+                                   
                     <div class="university-card">
                         <h3>Rusangu University</h3>
                         <p><strong>Location:</strong> Monze</p>
@@ -2491,8 +2480,8 @@
             slides[currentSlide].classList.add('active');
         }
         
-        // Change slide every 3 seconds
-        setInterval(nextSlide, 3000);
+        // Change slide every 6 seconds
+        setInterval(nextSlide, 6000);
         
         // Rotating scholarships
         let currentScholarship = 0;
@@ -2805,6 +2794,7 @@ Message: ${formData.get('message')}`;
     </script>
 </body>
 </html>
+
 
 
 
